@@ -1,0 +1,55 @@
+.btn-primary {
+    background-color: #EBAD11 !important;
+}
+
+.btn-primary:focus {
+    box-shadow: #D4B462 !important;
+    outline: 2px solid #D4B462 !important;
+}
+
+.btn-primary:hover {
+    background-color: #D4A007 !important;
+    /* Darker shade for hover */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-info:hover {
+    background-color: #6054C8 !important;
+    /* Darker shade for hover */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-danger:hover {
+    background-color: #D45564 !important;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-info {
+    background-color: #7162E6 !important;
+}
+
+.btn-info:focus {
+    box-shadow: #5B4E9B !important;
+    outline: 2px solid #5B4E9B !important;
+}
+
+.btn-danger {
+    background-color: #E66272 !important;
+}
+
+.btn-danger:focus {
+    box-shadow: #D46262 !important;
+    outline: 2px solid #D46262 !important;
+}
+
+.btn-outline-primary {
+    color: #EBAD11 !important;
+    border-color: #EBAD11 !important;
+    outline: 2px solid #EFCE7C !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #C69500 !important;
+    color: white !important;
+    transition: background-color 0.3s ease-in-out;
+}
