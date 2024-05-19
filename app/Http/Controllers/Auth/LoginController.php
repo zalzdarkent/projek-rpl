@@ -56,9 +56,13 @@ class LoginController extends Controller
 
         if ($this->attemptLogin($request, $remember)) {
             $request->session()->regenerate();
+            $user = Auth::user();
+            session()->flash('success', 'Login berhasil, selamat datang ' . $user->name . '!');
             return redirect()->intended($this->redirectPath());
         }
 
+        // Menambahkan pesan error ke session flash
+        session()->flash('error', 'Login gagal, silahkan coba lagi');
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ]);
@@ -67,7 +71,8 @@ class LoginController extends Controller
     protected function attemptLogin(Request $request, $remember)
     {
         return $this->guard()->attempt(
-            $this->credentials($request), $remember
+            $this->credentials($request),
+            $remember
         );
     }
 
@@ -77,12 +82,12 @@ class LoginController extends Controller
      */
     public function logout(Request $request)
     {
-        $this->guard()->logout();   
+        $this->guard()->logout();
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         $cookie = Cookie::forget('remember_web_59ba36addc2b2f9401580f014c7f58ea4e30989d');
-        Cookie::queue($cookie); 
+        Cookie::queue($cookie);
         return redirect('/')->withCookie($cookie);
     }
 }

@@ -14,6 +14,62 @@
     <link rel="stylesheet" href="css/app.css" crossorigin="anonymous">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <style>
+        .modal-dialog-custom {
+            max-width: 380px;
+            /* Ubah nilai ini sesuai kebutuhan */
+            margin: auto;
+        }
+
+        .modal-content-custom {
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .modal-header-custom {
+            display: flex;
+            justify-content: center;
+            background-color: white;
+            border-bottom: none;
+        }
+
+        .modal-body-custom {
+            padding: 2rem;
+        }
+
+        .modal-footer-custom {
+            justify-content: center;
+            border-top: none;
+        }
+
+        .modal-footer-custom .btn-primary {
+            background-color: #0000FF;
+            border-color: #0000FF;
+            padding: 0.5rem 2rem;
+            border-radius: 10px;
+        }
+
+        .modal-footer-custom .btn-primary:hover {
+            background-color: #0000AA;
+            border-color: #0000AA;
+        }
+
+        .modal-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        .modal-close {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 1.5rem;
+            color: #000;
+        }
+    </style>
 </head>
 
 <body class="c-app flex-row align-items-center">
@@ -58,8 +114,10 @@
                                 @enderror
                             </div>
                             <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="remember" name="remember" style="width: 20px; height: 20px;">
-                                <label class="form-check-label" name="remember" for="remember" style="margin-left: 5px;">Remember Me</label>
+                                <input type="checkbox" class="form-check-input" id="remember" name="remember"
+                                    style="width: 20px; height: 20px;">
+                                <label class="form-check-label" name="remember" for="remember"
+                                    style="margin-left: 5px;">Remember Me</label>
                             </div>
                             <div class="row">
                                 <div class="col-4">
@@ -80,6 +138,38 @@
         </div>
     </div>
 
+    {{-- Modal Alert Login Gagal --}}
+    <div class="modal fade" id="loginErrorModal" tabindex="-1" role="dialog" aria-labelledby="loginErrorModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-custom" role="document">
+            <div class="modal-content modal-content-custom">
+                <div class="modal-header modal-header-custom">
+                    <h5 class="modal-title" id="loginErrorModalLabel">Login gagal, silahkan ulangi!</h5>
+                    <button type="button" class="close modal-close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-body-custom">
+                    <img src="images/tandasilang.png" alt="Error Icon" class="modal-icon">
+                </div>
+                <div class="modal-footer modal-footer-custom">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @if (session('error'))
+        <script>
+            $(document).ready(function() {
+                $('#loginErrorModal').modal('show');
+            });
+        </script>
+    @endif
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!-- CoreUI -->
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script>
@@ -91,8 +181,8 @@
 
         login.addEventListener('submit', (e) => {
             submit.disabled = true;
-            email.readonly = true;
-            password.readonly = true;
+            email.readOnly = true;
+            password.readOnly = true;
 
             spinner.style.display = 'block';
 
@@ -101,8 +191,8 @@
 
         setTimeout(() => {
             submit.disabled = false;
-            email.readonly = false;
-            password.readonly = false;
+            email.readOnly = false;
+            password.readOnly = false;
 
             spinner.style.display = 'none';
         }, 3000);
