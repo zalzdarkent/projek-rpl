@@ -27,7 +27,7 @@
                                 <i class="bi bi-bar-chart font-2xl"></i>
                             </div>
                             <div>
-                                <div class="text-value text-primary">{{ format_currency('0') }}</div>
+                                <div class="text-value text-primary">{{ format_currency($revenue) }}</div>
                                 <div class="text-muted text-uppercase font-weight-bold small">Pendapatan</div>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                                 <i class="bi bi-arrow-return-left font-2xl"></i>
                             </div>
                             <div>
-                                <div class="text-value text-warning">{{ format_currency('0') }}</div>
+                                <div class="text-value text-warning">{{ format_currency($sale_returns) }}</div>
                                 <div class="text-muted text-uppercase font-weight-bold small">Retur Penjualan</div>
                             </div>
                         </div>
@@ -55,7 +55,7 @@
                                 <i class="bi bi-arrow-return-right font-2xl"></i>
                             </div>
                             <div>
-                                <div class="text-value text-success">{{ format_currency('0') }}</div>
+                                <div class="text-value text-success">{{ format_currency($purchase_returns) }}</div>
                                 <div class="text-muted text-uppercase font-weight-bold small">Retur Pembelian</div>
                             </div>
                         </div>
@@ -69,7 +69,7 @@
                                 <i class="bi bi-trophy font-2xl"></i>
                             </div>
                             <div>
-                                <div class="text-value text-info">{{ format_currency('0') }}</div>
+                                <div class="text-value text-info">{{ format_currency($profit) }}</div>
                                 <div class="text-muted text-uppercase font-weight-bold small">Keuntungan</div>
                             </div>
                         </div>
@@ -96,7 +96,7 @@
                     <div class="col-lg-5">
                         <div class="card border-0 shadow-sm h-100">
                             <div class="card-header">
-                                Rekapan Bulan Mei
+                                Rekapan Bulan {{ \Carbon\Carbon::now()->translatedFormat('F Y') }}
                             </div>
                             <div class="card-body d-flex justify-content-center">
                                 <div class="chart-container" style="position: relative; height:auto; width:280px">

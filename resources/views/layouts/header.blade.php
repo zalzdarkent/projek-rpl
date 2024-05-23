@@ -53,22 +53,34 @@
                 aria-expanded="false">
                 <i class="bi bi-bell" style="font-size: 20px;"></i>
                 <span class="badge badge-pill badge-danger">
-                    3
+                    @php
+                        $low_quantity_products = \Modules\Product\Entities\Product::select(
+                            'id',
+                            'product_quantity',
+                            'product_name',
+                            'product_stock_alert',
+                            'product_code',
+                        )
+                            ->whereColumn('product_quantity', '<=', 'product_stock_alert')
+                            ->get();
+                        echo $low_quantity_products->count();
+                    @endphp
                 </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg pt-0">
                 <div class="dropdown-header bg-light">
-                    <strong> Notifikasi</strong>
+                    <strong>{{ $low_quantity_products->count() }} Notifikasi</strong>
                 </div>
-                <a class="dropdown-item" href="#">
-                    <i class="bi bi-hash mr-1 text-primary"></i> Product: "Laptop" is low in quantity!
-                </a>
-                <a class="dropdown-item" href="#">
-                    <i class="bi bi-hash mr-1 text-primary"></i> Product: "Mouse" is low in quantity!
-                </a>
-                <a class="dropdown-item" href="#">
-                    <i class="bi bi-hash mr-1 text-primary"></i> Product: "TV" is low in quantity!
-                </a>
+                @forelse($low_quantity_products as $product)
+                    <a class="dropdown-item" href="{{ route('products.show', $product->id) }}">
+                        <i class="bi bi-hash mr-1 text-primary"></i> Product: "{{ $product->product_name }}" is low in
+                        quantity!
+                    </a>
+                @empty
+                    <a class="dropdown-item" href="#">
+                        <i class="bi bi-app-indicator mr-2 text-danger"></i> Tidak Ada Notifikasi Tersedia.
+                    </a>
+                @endforelse
             </div>
         </li>
     @endcan
