@@ -2,10 +2,6 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-body {
-    cursor: url('images/cursor.png'), auto !important;
-}
-
 .btn-primary {
     background-color: #EBAD11 !important;
 }

@@ -2,18 +2,20 @@
 
 namespace Modules\Purchase\Http\Controllers;
 
-use Modules\Purchase\DataTables\PurchaseDataTable;
-use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Modules\People\Entities\Supplier;
 use Modules\Product\Entities\Product;
 use Modules\Purchase\Entities\Purchase;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Modules\Purchase\Entities\PurchaseDetail;
 use Modules\Purchase\Entities\PurchasePayment;
+use Modules\Purchase\DataTables\PurchaseDataTable;
+use Modules\PurchasesReturn\Entities\PurchaseReturn;
 use Modules\Purchase\Http\Requests\StorePurchaseRequest;
 use Modules\Purchase\Http\Requests\UpdatePurchaseRequest;
+use Modules\PurchasesReturn\Entities\PurchaseReturnDetail;
 
 class PurchaseController extends Controller
 {
@@ -226,5 +228,29 @@ class PurchaseController extends Controller
         toast('Pembelian Dihapus', 'warning');
 
         return redirect()->route('purchases.index');
+    }
+
+    public function findPurchaseByReference($reference)
+    {
+        $purchase = Purchase::where('reference', $reference)->first();
+
+        if ($purchase) {
+            return view('purchases.show', ['purchase' => $purchase]);
+        } else {
+            return redirect()->back()->withErrors(['message' => 'Purchase not found']);
+        }
+    }
+
+    public function getPurchaseReturnDetailsByReference($reference)
+    {
+        $purchaseReturn = PurchaseReturn::where('reference', $reference)->first();
+
+        if ($purchaseReturn) {
+            $purchaseReturnDetails = PurchaseReturnDetail::where('purchase_return_id', $purchaseReturn->id)->get();
+
+            return view('purchase_returns.details', ['details' => $purchaseReturnDetails]);
+        } else {
+            return redirect()->back()->withErrors(['message' => 'Purchase return not found']);
+        }
     }
 }
