@@ -102,47 +102,6 @@
             <a class="dropdown-item" href="{{ route('profile.edit') }}">
                 <i class="mfe-2  bi bi-person" style="font-size: 1.2rem;"></i> Profil
             </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" id="logoutButton">
-                <i class="mfe-2  bi bi-box-arrow-left" style="font-size: 1.2rem;"></i> Keluar
-            </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                @csrf
-            </form>
-        </div>
-        <div id="logoutModal"
-            style="display:none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
-            <div class="modal-content"
-                style="background-color: #070652; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 350px; text-align: center; border-radius: 10px;">
-                <span class="close" id="closeModal"
-                    style="color: white; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
-                <p style="color: white;">Yakin ingin logout?</p>
-                <div style="display: flex; justify-content: center;">
-                    <button id="confirmLogout"
-                        style="background-color: #3498db; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin: 10px; min-width: 110px;">Ya</button>
-                    <button id="cancelLogout"
-                        style="background-color: #e74c3c; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin: 10px; min-width: 110px;">Tidak</button>
-                </div>
-            </div>
         </div>
     </li>
 </ul>
-
-<script>
-    document.getElementById('logoutButton').addEventListener('click', function(event) {
-        event.preventDefault();
-        document.getElementById('logoutModal').style.display = 'block';
-    });
-
-    document.getElementById('closeModal').addEventListener('click', function() {
-        document.getElementById('logoutModal').style.display = 'none';
-    });
-
-    document.getElementById('cancelLogout').addEventListener('click', function() {
-        document.getElementById('logoutModal').style.display = 'none';
-    });
-
-    document.getElementById('confirmLogout').addEventListener('click', function() {
-        document.getElementById('logout-form').submit();
-    });
-</script>

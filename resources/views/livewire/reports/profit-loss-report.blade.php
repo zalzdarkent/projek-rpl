@@ -133,47 +133,5 @@
                 </div>
             </div>
         </div>
-        {{-- Payments Received --}}
-        <div class="col-12 col-lg-4">
-            <div class="card border-0 shadow-sm">
-                <div class="card-body p-3 d-flex align-items-center">
-                    <div class="bg-primary p-3 mfe-3 rounded">
-                        <i class="bi bi-cash-stack font-2xl"></i>
-                    </div>
-                    <div>
-                        <div class="text-value text-primary">{{ format_currency($payments_received_amount) }}</div>
-                        <div class="text-uppercase font-weight-bold small text-dark">Pembayaran Diterima</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- Payments Sent --}}
-        <div class="col-12 col-lg-4">
-            <div class="card border-0 shadow-sm">
-                <div class="card-body p-3 d-flex align-items-center">
-                    <div class="bg-primary p-3 mfe-3 rounded">
-                        <i class="bi bi-cash-stack font-2xl"></i>
-                    </div>
-                    <div>
-                        <div class="text-value text-primary">{{ format_currency($payments_sent_amount) }}</div>
-                        <div class="text-uppercase font-weight-bold small text-dark">Pembayaran Terkirim</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{-- Payments Net --}}
-        <div class="col-12 col-lg-4">
-            <div class="card border-0 shadow-sm">
-                <div class="card-body p-3 d-flex align-items-center">
-                    <div class="bg-primary p-3 mfe-3 rounded">
-                        <i class="bi bi-cash-stack font-2xl"></i>
-                    </div>
-                    <div>
-                        <div class="text-value text-primary">{{ format_currency($payments_net_amount) }}</div>
-                        <div class="text-uppercase font-weight-bold small text-dark">Pembayaran Bersih</div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>

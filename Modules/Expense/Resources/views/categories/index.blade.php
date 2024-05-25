@@ -60,7 +60,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Buat <i class="bi bi-check"></i></button>
+                        <button type="submit" class="btn btn-primary">Simpan <i class="bi bi-check"></i></button>
                     </div>
                 </form>
             </div>

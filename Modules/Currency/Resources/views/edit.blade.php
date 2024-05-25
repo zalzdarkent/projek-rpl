@@ -18,9 +18,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     @include('utils.alerts')
-                    <div class="form-group">
-                        <button class="btn btn-primary">Perbarui Mata Uang <i class="bi bi-check"></i></button>
-                    </div>
                 </div>
                 <div class="col-lg-12">
                     <div class="card">
@@ -61,6 +58,11 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 d-flex justify-content-start">
+                    <div class="form-group">
+                        <button class="btn btn-primary">Perbarui Mata Uang <i class="bi bi-check"></i></button>
                     </div>
                 </div>
             </div>

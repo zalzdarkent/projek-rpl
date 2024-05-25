@@ -21,12 +21,6 @@
         <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
-                <div class="col-lg-12">
-                    @include('utils.alerts')
-                    <div class="form-group">
-                        <button class="btn btn-primary">Buat Pengguna <i class="bi bi-plus"></i></button>
-                    </div>
-                </div>
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-body">
@@ -81,14 +75,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="image">Foto Profil <span class="text-danger">*</span></label>
-                                <input id="image" type="file" name="image" data-max-file-size="5000KB">
-                            </div>
-                        </div>
+                <div class="col-lg-12">
+                    @include('utils.alerts')
+                    <div class="form-group">
+                        <button class="btn btn-primary">Simpan <i class="bi bi-plus"></i></button>
                     </div>
                 </div>
             </div>

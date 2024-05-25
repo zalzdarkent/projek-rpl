@@ -28,8 +28,8 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="product_code">Kode Produk <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="product_code" required value="{{ old('product_code') }}">
+                                        <label for="product_code">Kode Produk <i class="bi bi-question-circle-fill text-info" data-toggle="tooltip" data-placement="top" title="Kode produk harus berupa angka"></i> <span class="text-danger">*</span></label>
+                                        <input type="number" class="form-control" name="product_code" required value="{{ old('product_code') }}">
                                     </div>
                                 </div>
                             </div>
@@ -44,11 +44,6 @@
                                                 <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                                             @endforeach
                                         </select>
-                                        <div class="input-group-append d-flex">
-                                            <button data-toggle="modal" data-target="#categoryCreateModal" class="btn btn-outline-primary" type="button">
-                                                Tambah
-                                            </button>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -115,7 +110,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label for="product_unit">Unit <i class="bi bi-question-circle-fill text-info" data-toggle="tooltip" data-placement="top" title="This short text will be placed after Product Quantity."></i> <span class="text-danger">*</span></label>
+                                        <label for="product_unit">Unit <span class="text-danger">*</span></label>
                                         <select class="form-control" name="product_unit" id="product_unit">
                                             <option value="" selected >Pilih Unit</option>
                                             @foreach(\Modules\Setting\Entities\Unit::all() as $unit)
@@ -138,7 +133,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="image">Gambar Produk <i class="bi bi-question-circle-fill text-info" data-toggle="tooltip" data-placement="top" title="Max Files: 3, Max File Size: 15MB, Image Size: 400x400"></i></label>
+                                <label for="image">Gambar Produk <i class="bi bi-question-circle-fill text-info" data-toggle="tooltip" data-placement="top" title="Max Files: 3, Mx Ukuran File: 15MB, Ukuran gambar: 400x400"></i></label>
                                 <div class="dropzone d-flex flex-wrap align-items-center justify-content-center" id="document-dropzone">
                                     <div class="dz-message" data-dz-message>
                                         <i class="bi bi-cloud-arrow-up"></i>

@@ -3,18 +3,18 @@
         <i class="bi bi-three-dots-vertical"></i>
     </button>
     <div class="dropdown-menu">
-        @can('access_purchase_payments')
+        {{-- @can('access_purchase_payments')
             <a href="{{ route('purchase-payments.index', $data->id) }}" class="dropdown-item">
                 <i class="bi bi-cash-coin mr-2 text-warning" style="line-height: 1;"></i> Lihat Pembayaran
             </a>
-        @endcan
-        @can('access_purchase_payments')
+        @endcan --}}
+        {{-- @can('access_purchase_payments')
             @if($data->due_amount > 0)
                 <a href="{{ route('purchase-payments.create', $data->id) }}" class="dropdown-item">
                     <i class="bi bi-plus-circle-dotted mr-2 text-success" style="line-height: 1;"></i> Tambah Pembayaran
                 </a>
             @endif
-        @endcan
+        @endcan --}}
         @can('edit_purchases')
             <a href="{{ route('purchases.edit', $data->id) }}" class="dropdown-item">
                 <i class="bi bi-pencil mr-2 text-primary" style="line-height: 1;"></i> Ubah

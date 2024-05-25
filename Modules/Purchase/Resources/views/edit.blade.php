@@ -72,14 +72,14 @@
                                     <div class="from-group">
                                         <div class="form-group">
                                             <label for="payment_method">Metode Pembayaran <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" name="payment_method" required value="{{ $purchase->payment_method }}" readonly>
+                                            <input type="text" class="form-control" name="payment_method" required value="{{ $purchase->payment_method }}" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="paid_amount">Uang Dibayarkan <span class="text-danger">*</span></label>
-                                        <input id="paid_amount" type="text" class="form-control" name="paid_amount" required value="{{ $purchase->paid_amount }}" readonly>
+                                        <input id="paid_amount" type="text" class="form-control" name="paid_amount" required value="{{ $purchase->paid_amount }}" required>
                                     </div>
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
 
                             <div class="mt-3">
                                 <button type="submit" class="btn btn-primary">
-                                    Update Pembelian <i class="bi bi-check"></i>
+                                    Perbarui <i class="bi bi-check"></i>
                                 </button>
                             </div>
                         </form>

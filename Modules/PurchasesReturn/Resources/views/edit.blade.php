@@ -91,7 +91,7 @@
 
                             <div class="mt-3">
                                 <button type="submit" class="btn btn-primary">
-                                    Perbarui Retur Pembelian <i class="bi bi-check"></i>
+                                    Perbarui <i class="bi bi-check"></i>
                                 </button>
                             </div>
                         </form>

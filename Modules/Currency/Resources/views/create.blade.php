@@ -16,12 +16,6 @@
             @csrf
             <div class="row">
                 <div class="col-lg-12">
-                    @include('utils.alerts')
-                    <div class="form-group">
-                        <button class="btn btn-primary">Buat Mata Uang <i class="bi bi-check"></i></button>
-                    </div>
-                </div>
-                <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
                             <div class="form-row">
@@ -60,6 +54,12 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    @include('utils.alerts')
+                    <div class="form-group">
+                        <button class="btn btn-primary">Simpan <i class="bi bi-check"></i></button>
                     </div>
                 </div>
             </div>

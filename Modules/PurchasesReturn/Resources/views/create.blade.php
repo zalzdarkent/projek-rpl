@@ -103,7 +103,7 @@
 
                             <div class="mt-3">
                                 <button type="submit" class="btn btn-primary">
-                                    Buat Retur Pembelian <i class="bi bi-check"></i>
+                                    Simpan <i class="bi bi-check"></i>
                                 </button>
                             </div>
                         </form>

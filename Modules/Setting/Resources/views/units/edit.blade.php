@@ -44,17 +44,16 @@
                                         <input type="text" class="form-control" name="operation_value" value="{{ $unit->operation_value }}">
                                     </div>
                                 </div>
-                                <div class="col-lg-12 d-flex justify-content-end">
-                                    <div class="form-group">
-                                        <button class="btn btn-primary">Perbarui Unit <i class="bi bi-check"></i></button>
-                                    </div>
-                                </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 d-flex justify-content-start"> <!-- Changed from 'justify-content-end' to 'justify-content-start' -->
+                    <div class="form-group">
+                        <button class="btn btn-primary">Perbarui <i class="bi bi-check"></i></button>
                     </div>
                 </div>
             </div>
         </form>
     </div>
 @endsection
-

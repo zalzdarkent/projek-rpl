@@ -29,7 +29,7 @@
             <li class="c-sidebar-nav-item">
                 <a class="c-sidebar-nav-link {{ request()->routeIs('products.index') ? 'c-active' : '' }}"
                     href="{{ route('products.index') }}">
-                    <i class="c-sidebar-nav-icon bi bi-journals" style="line-height: 1;"></i> Semua Barang
+                    <i class="c-sidebar-nav-icon bi bi-journals" style="line-height: 1;"></i> Daftar Barang
                 </a>
             </li>
             @can('print_barcodes')
@@ -91,7 +91,7 @@
             <li class="c-sidebar-nav-item">
                 <a class="c-sidebar-nav-link {{ request()->routeIs('purchases.index') ? 'c-active' : '' }}"
                     href="{{ route('purchases.index') }}">
-                    <i class="c-sidebar-nav-icon bi bi-journals" style="line-height: 1;"></i> Semua Pembelian
+                    <i class="c-sidebar-nav-icon bi bi-journals" style="line-height: 1;"></i> Riwayat Pembelian
                 </a>
             </li>
         </ul>
@@ -118,34 +118,7 @@
             <li class="c-sidebar-nav-item">
                 <a class="c-sidebar-nav-link {{ request()->routeIs('purchase-returns.index') ? 'c-active' : '' }}"
                     href="{{ route('purchase-returns.index') }}">
-                    <i class="c-sidebar-nav-icon bi bi-journals" style="line-height: 1;"></i> Semua Retur Pembelian
-                </a>
-            </li>
-        </ul>
-    </li>
-@endcan
-
-@can('access_purchase_returns')
-    <li
-        class="c-sidebar-nav-item c-sidebar-nav-dropdown {{ request()->routeIs('purchase-returns.*') || request()->routeIs('purchase-return-payments.*') ? 'c-show' : '' }}">
-        <a class="c-sidebar-nav-link c-sidebar-nav-dropdown-toggle" href="#">
-            <i class="c-sidebar-nav-icon bi bi-arrow-return-right" style="line-height: 1;"></i> Retur Pembelian
-        </a>
-        @can('create_purchase_returns')
-            <ul class="c-sidebar-nav-dropdown-items">
-                <li class="c-sidebar-nav-item">
-                    <a class="c-sidebar-nav-link {{ request()->routeIs('purchase-returns.create') ? 'c-active' : '' }}"
-                        href="{{ route('purchase-returns.create') }}">
-                        <i class="c-sidebar-nav-icon bi bi-journal-plus" style="line-height: 1;"></i> Buat Retur Pembelian
-                    </a>
-                </li>
-            </ul>
-        @endcan
-        <ul class="c-sidebar-nav-dropdown-items">
-            <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link {{ request()->routeIs('purchase-returns.index') ? 'c-active' : '' }}"
-                    href="{{ route('purchase-returns.index') }}">
-                    <i class="c-sidebar-nav-icon bi bi-journals" style="line-height: 1;"></i> Semua Retur Pembelian
+                    <i class="c-sidebar-nav-icon bi bi-journals" style="line-height: 1;"></i> Riwayat Retur Pembelian
                 </a>
             </li>
         </ul>
@@ -172,7 +145,7 @@
             <li class="c-sidebar-nav-item">
                 <a class="c-sidebar-nav-link {{ request()->routeIs('sales.index') ? 'c-active' : '' }}"
                     href="{{ route('sales.index') }}">
-                    <i class="c-sidebar-nav-icon bi bi-journals" style="line-height: 1;"></i> Semua Penjualan
+                    <i class="c-sidebar-nav-icon bi bi-journals" style="line-height: 1;"></i> Riwayat Penjualan
                 </a>
             </li>
         </ul>
@@ -199,7 +172,7 @@
             <li class="c-sidebar-nav-item">
                 <a class="c-sidebar-nav-link {{ request()->routeIs('sale-returns.index') ? 'c-active' : '' }}"
                     href="{{ route('sale-returns.index') }}">
-                    <i class="c-sidebar-nav-icon bi bi-journals" style="line-height: 1;"></i> Semua Retur Penjualan
+                    <i class="c-sidebar-nav-icon bi bi-journals" style="line-height: 1;"></i> Riwayat Retur Penjualan
                 </a>
             </li>
         </ul>
@@ -232,7 +205,7 @@
             <li class="c-sidebar-nav-item">
                 <a class="c-sidebar-nav-link {{ request()->routeIs('expenses.index') ? 'c-active' : '' }}"
                     href="{{ route('expenses.index') }}">
-                    <i class="c-sidebar-nav-icon bi bi-journals" style="line-height: 1;"></i> Semua Pengeluaran
+                    <i class="c-sidebar-nav-icon bi bi-journals" style="line-height: 1;"></i> Riwayat Pengeluaran
                 </a>
             </li>
         </ul>
@@ -270,7 +243,7 @@
             <li class="c-sidebar-nav-item">
                 <a class="c-sidebar-nav-link {{ request()->routeIs('users*') ? 'c-active' : '' }}"
                     href="{{ route('users.index') }}">
-                    <i class="c-sidebar-nav-icon bi bi-person-lines-fill" style="line-height: 1;"></i> Semua Pengguna
+                    <i class="c-sidebar-nav-icon bi bi-person-lines-fill" style="line-height: 1;"></i> Daftar Pengguna
                 </a>
             </li>
             <li class="c-sidebar-nav-item">
@@ -321,3 +294,52 @@
         @endcan
     </li>
 @endcan
+
+<li class="c-sidebar-nav-item">
+    {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+    <a class="c-sidebar-nav-link" href="{{ route('logout') }}">
+        <i class="c-sidebar-nav-icon bi bi-box-arrow-right" style="line-height: 1;"></i> Logout
+    </a> --}}
+    <a class="c-sidebar-nav-link" href="#" id="logoutButton"">
+        <i class="c-sidebar-nav-icon bi bi-box-arrow-left" style="font-size: 1.2rem; line-height: 1;"></i> Keluar
+    </a>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+    </form>
+    <div id="logoutModal"
+        style="display:none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
+        <div class="modal-content"
+            style="background-color: #070652; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 80%; max-width: 350px; text-align: center; border-radius: 10px;">
+            <span class="close" id="closeModal"
+                style="color: white; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+            <p style="color: white;">Yakin ingin logout?</p>
+            <div style="display: flex; justify-content: center;">
+                <button id="confirmLogout"
+                    style="background-color: #3498db; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin: 10px; min-width: 110px;">Ya</button>
+                <button id="cancelLogout"
+                    style="background-color: #e74c3c; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin: 10px; min-width: 110px;">Tidak</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('logoutButton').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('logoutModal').style.display = 'block';
+        });
+    
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('logoutModal').style.display = 'none';
+        });
+    
+        document.getElementById('cancelLogout').addEventListener('click', function() {
+            document.getElementById('logoutModal').style.display = 'none';
+        });
+    
+        document.getElementById('confirmLogout').addEventListener('click', function() {
+            document.getElementById('logout-form').submit();
+        });
+    </script>
+</li>

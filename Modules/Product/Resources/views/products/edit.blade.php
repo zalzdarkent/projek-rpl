@@ -17,25 +17,19 @@
             @method('patch')
             <div class="row">
                 <div class="col-lg-12">
-                    @include('utils.alerts')
-                    <div class="form-group">
-                        <button class="btn btn-primary">Perbarui Produk <i class="bi bi-check"></i></button>
-                    </div>
-                </div>
-                <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
                             <div class="form-row">
-                                <div class="col-md-7">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="product_name">Nama Produk <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control" name="product_name" required value="{{ $product->product_name }}">
                                     </div>
                                 </div>
-                                <div class="col-md-5">
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="product_code">Kode Produk <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="product_code" required value="{{ $product->product_code }}">
+                                        <label for="product_code">Kode Produk <i class="bi bi-question-circle-fill text-info" data-toggle="tooltip" data-placement="top" title="Kode produk harus berupa angka"></i><span class="text-danger">*</span></label>
+                                        <input type="number" class="form-control" name="product_code" required value="{{ $product->product_code }}">
                                     </div>
                                 </div>
                             </div>
@@ -48,6 +42,19 @@
                                             @foreach(\Modules\Product\Entities\Category::all() as $category)
                                                 <option {{ $category->id == $product->category->id ? 'selected' : '' }} value="{{ $category->id }}">{{ $category->category_name }}</option>
                                             @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="barcode_symbology">Simbol Barcode <span class="text-danger">*</span></label>
+                                        <select class="form-control" name="product_barcode_symbology" id="barcode_symbology" required>
+                                            <option value="" selected disabled>Pilih Simbol</option>
+                                            <option value="C128">Code 128</option>
+                                            <option value="C39">Code 39</option>
+                                            <option value="UPCA">UPC-A</option>
+                                            <option value="UPCE">UPC-E</option>
+                                            <option selected value="EAN13">EAN-13</option><option value="EAN8">EAN-8</option>
                                         </select>
                                     </div>
                                 </div>
@@ -132,6 +139,12 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    @include('utils.alerts')
+                    <div class="form-group">
+                        <button class="btn btn-primary">Perbarui <i class="bi bi-check"></i></button>
                     </div>
                 </div>
             </div>

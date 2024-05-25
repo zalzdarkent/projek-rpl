@@ -3,7 +3,7 @@
         <i class="bi bi-three-dots-vertical"></i>
     </button>
     <div class="dropdown-menu">
-        @can('access_purchase_return_payments')
+        {{-- @can('access_purchase_return_payments')
             <a href="{{ route('purchase-return-payments.index', $data->id) }}" class="dropdown-item">
                 <i class="bi bi-cash-coin mr-2 text-warning" style="line-height: 1;"></i> Lihat Pembayaran
             </a>
@@ -14,7 +14,7 @@
                     <i class="bi bi-plus-circle-dotted mr-2 text-success" style="line-height: 1;"></i> Tambah Pembayaran
                 </a>
             @endif
-        @endcan
+        @endcan --}}
         @can('edit_purchase_returns')
             <a href="{{ route('purchase-returns.edit', $data->id) }}" class="dropdown-item">
                 <i class="bi bi-pencil mr-2 text-primary" style="line-height: 1;"></i> Ubah
