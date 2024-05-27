@@ -2,6 +2,7 @@
     <div class="c-sidebar-brand" style="background-color: #EEEBEB">
         <a href="{{ route('home') }}">
             <img class="c-sidebar-brand-full" src="{{ asset('images/ujayyy.png') }}" alt="Site Logo" width="110" style="margin-top: 16px; margin-bottom: 16px;">
+            <img class="c-sidebar-brand-minimized" src="{{ asset('images/ujayyy.png') }}" alt="Site Logo" width="40">
         </a>
     </div>
     <ul class="c-sidebar-nav" style="background-color: #070652;">

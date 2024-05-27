@@ -63,7 +63,6 @@ class HomeController extends Controller
         ]);
     }
 
-
     public function salesPurchasesChart() {
         abort_if(!request()->ajax(), 404);
 
@@ -72,7 +71,6 @@ class HomeController extends Controller
 
         return response()->json(['sales' => $sales, 'purchases' => $purchases]);
     }
-
 
     public function paymentChart() {
         abort_if(!request()->ajax(), 404);

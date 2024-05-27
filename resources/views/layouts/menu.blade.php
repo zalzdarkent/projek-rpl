@@ -267,7 +267,7 @@
                 <li class="c-sidebar-nav-item">
                     <a class="c-sidebar-nav-link {{ request()->routeIs('units*') ? 'c-active' : '' }}"
                         href="{{ route('units.index') }}">
-                        <i class="c-sidebar-nav-icon bi bi-calculator" style="line-height: 1;"></i> Units
+                        <i class="c-sidebar-nav-icon bi bi-calculator" style="line-height: 1;"></i> Unit
                     </a>
                 </li>
             </ul>

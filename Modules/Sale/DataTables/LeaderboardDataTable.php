@@ -28,7 +28,7 @@ class LeaderboardDataTable extends DataTable
         return $model->newQuery()
             ->select('product_id', 'product_name')
             ->selectRaw('SUM(quantity) as total_quantity_sold')
-            ->selectRaw('SUM(unit_price * quantity) as total_revenue') // Hitung total pendapatan dari penjualan
+            ->selectRaw('SUM(unit_price * quantity) as total_revenue') 
             ->whereRaw("DATE_FORMAT(created_at, '%Y-%m') = ?", [date('Y-m')])
             ->groupBy('product_id', 'product_name')
             ->orderByDesc('total_quantity_sold');
@@ -49,8 +49,6 @@ class LeaderboardDataTable extends DataTable
                     ->text('<i class="bi bi-file-earmark-excel-fill"></i> Excel'),
                 Button::make('print')
                     ->text('<i class="bi bi-printer-fill"></i> Print'),
-                Button::make('reset')
-                    ->text('<i class="bi bi-x-circle"></i> Reset'),
                 Button::make('reload')
                     ->text('<i class="bi bi-arrow-repeat"></i> Reload')
             );
