@@ -20,7 +20,7 @@
 > Email: admin@test.com || Password: 12345678
 
 ## Demo
-![Inventory Management](public/images/screenshot.jpg)
+![Inventory Management](public/images/screenshot.png)
 **Live Demo:** will update soon
 
 ## Inventory Management Features
