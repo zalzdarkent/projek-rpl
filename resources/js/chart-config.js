@@ -1,10 +1,11 @@
 $(document).ready(function () {
     let salesPurchasesBar = document.getElementById("salesPurchasesChart");
     $.get("/sales-purchases/chart-data", function (response) {
+        let daysOfWeek = ["Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"];
         let salesPurchasesChart = new Chart(salesPurchasesBar, {
             type: "bar",
             data: {
-                labels: response.sales.original.days,
+                labels: daysOfWeek,
                 datasets: [
                     {
                         label: "Penjualan",
