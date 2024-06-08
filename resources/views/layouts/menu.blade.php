@@ -14,7 +14,7 @@
                 <li class="c-sidebar-nav-item">
                     <a class="c-sidebar-nav-link {{ request()->routeIs('product-categories.*') ? 'c-active' : '' }}"
                         href="{{ route('product-categories.index') }}">
-                        <i class="c-sidebar-nav-icon bi bi-collection" style="line-height: 1;"></i> Kategori
+                        <i class="c-sidebar-nav-icon bi bi-collection" style="line-height: 1;"></i> Kategori Barang
                     </a>
                 </li>
             @endcan
