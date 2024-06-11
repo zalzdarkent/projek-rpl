@@ -16,6 +16,7 @@
 > Email: admin@test.com || Password: 12345678
 
 ## Demo
+Link Website : http://ujayinventory.my.id/
 ![Inventory Management](public/images/screenshot.png)
 
 ## Anggota Kelompok
