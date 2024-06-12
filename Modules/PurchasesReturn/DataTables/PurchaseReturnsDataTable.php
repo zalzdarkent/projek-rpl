@@ -80,7 +80,7 @@ class PurchaseReturnsDataTable extends DataTable
                 ->className('text-center align-middle'),
 
             Column::computed('due_amount')
-                ->title('Tenggat Pembayaran')
+                ->title('Tunggakan')
                 ->className('text-center align-middle'),
 
             Column::computed('payment_status')
