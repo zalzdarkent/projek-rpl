@@ -20,7 +20,6 @@
     <style>
         .modal-dialog-custom {
             max-width: 380px;
-            /* Ubah nilai ini sesuai kebutuhan */
             margin: auto;
         }
 

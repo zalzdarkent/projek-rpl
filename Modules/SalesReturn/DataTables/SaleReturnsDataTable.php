@@ -80,7 +80,7 @@ class SaleReturnsDataTable extends DataTable
                 ->className('text-center align-middle'),
 
             Column::computed('due_amount')
-                ->title('Total Pembayaran')
+                ->title('Tunggakan')
                 ->className('text-center align-middle'),
 
             Column::computed('payment_status')
