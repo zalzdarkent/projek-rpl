@@ -15,6 +15,9 @@ class ProductCategoriesDataTable extends DataTable
     public function dataTable($query) {
         return datatables()
             ->eloquent($query)
+            ->filterColumn('products_count', function ($query, $keyword) {
+                $query->havingRaw("products_count LIKE ?", ["%{$keyword}%"]);
+            })
             ->addColumn('action', function ($data) {
                 return view('product::categories.partials.actions', compact('data'));
             });
