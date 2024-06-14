@@ -38,7 +38,7 @@
                                 <div class="col-lg-4">
                                     <div class="form-group">
                                         <label for="customer_phone">Nomor Pelanggan <span class="text-danger">*</span></label>
-                                        <input type="text" class="form-control" name="customer_phone" required value="{{ $customer->customer_phone }}">
+                                        <input type="number" class="form-control" name="customer_phone" required value="{{ $customer->customer_phone }}">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">
