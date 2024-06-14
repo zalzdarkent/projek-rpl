@@ -39,6 +39,7 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $this->middleware('short.session')->only('login');
     }
 
     /**
@@ -58,10 +59,16 @@ class LoginController extends Controller
             $request->session()->regenerate();
             $user = Auth::user();
             session()->flash('success', 'Login berhasil, selamat datang ' . $user->name . '!');
+
+            if (!$remember) {
+                $request->session()->put('remember_me', false);
+            } else {
+                $request->session()->put('remember_me', true);
+            }
+
             return redirect()->intended($this->redirectPath());
         }
 
-        // Menambahkan pesan error ke session flash
         session()->flash('error', 'Login gagal, silahkan coba lagi');
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',

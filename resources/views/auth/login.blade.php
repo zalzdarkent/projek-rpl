@@ -80,6 +80,11 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-5">
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
                 <div class="card p-4 border-0 shadow-sm">
                     <div class="card-body">
                         <form id="login" method="post" action="{{ route('masuk') }}">
