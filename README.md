@@ -16,21 +16,21 @@
 > Email: admin@test.com || Password: 12345678
 
 ## Demo
+Link Website : http://ujayinventory.my.id/
+
+
 ![Inventory Management](public/images/screenshot.png)
 
-## Inventory Management Features
+## Anggota Kelompok
 
-- **Products Management & Barcode Printing**
-- **Stock Management**
-- **Make Quotation & Send Via Email**
-- **Purchase Management**
-- **Sale Management**
-- **Purchase & Sale Return Management**
-- **Expense Management**
-- **Customer & Supplier Management**
-- **User Management (Roles & Permissions)**
-- **Product Multiple Images**
-- **Multiple Currency Settings**
-- **Unit Settings**
-- **System Settings**
-- **Reports**
+- **ALFIA MEILANI PUTRI**
+- **ALIF FADILLAH UMMAR**
+- **ALUSTINA SUCI MANAH**
+- **ANANTA ZIAUROHMAN AZ ZAKI**
+- **IKHWAN PRATAMA HIDAYAT**
+- **MISHEL AULIDYA**
+- **MUHAMMAD EKI BARKATAN SARI**
+- **RIDHAKA GINA AMALIA**
+- **RIZKI SEPTIANA**
+- **REIZA ALITHIAN SYACH**
+- **TJOARGEN CHRISTOPER REDJA**
